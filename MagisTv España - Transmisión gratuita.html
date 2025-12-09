@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<!-- saved from url=(0025)https://magistv-pro.live/ -->
+<html lang="az"><!-- Mirrored from livenettvazpro.prostreaming.org/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Aug 2025 18:45:50 GMT --><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>MagisTv España - Transmisión gratuita</title>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0d1117;
+            min-height: 100vh;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 380px;
+            width: 95%;
+            margin: 0 auto;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .premium-card {
+            background: linear-gradient(145deg, #1a1f2e, #2d3748);
+            border: 2px solid #e53e3e;
+            border-radius: 18px;
+            padding: 20px 18px;
+            box-shadow: 0 15px 30px rgba(229, 62, 62, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .premium-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #e53e3e, #f56565, #e53e3e);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            .premium-card::before {
+                animation: none;
+            }
+            .platform-card {
+                transition: none;
+            }
+            .download-btn {
+                transition: none;
+            }
+        }
+
+        .language-switcher {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            display: flex;
+            gap: 5px;
+        }
+
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .lang-btn.active {
+            background: linear-gradient(45deg, #e53e3e, #c53030);
+            border-color: #e53e3e;
+        }
+
+        .exclusive-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            color: #000;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            transform: rotate(15deg);
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 12px;
+            background: linear-gradient(45deg, #e53e3e, #c53030);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 6px 20px rgba(229, 62, 62, 0.4);
+        }
+
+        .app-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 4px;
+            color: #e53e3e;
+        }
+
+        .app-subtitle {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 6px;
+        }
+
+        .tagline {
+            font-size: 12px;
+            color: #a0aec0;
+            margin-bottom: 15px;
+        }
+
+        .description {
+            font-size: 12px;
+            line-height: 1.4;
+            color: #cbd5e0;
+            margin-bottom: 18px;
+            text-align: left;
+        }
+
+        .platforms {
+            margin-bottom: 18px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .platforms-title {
+            font-size: 12px;
+            font-weight: bold;
+            color: #ffd700;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .platform-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            min-height: 70px;
+        }
+
+        .platform-card:hover {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05));
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .platform-logo {
+            width: 60px;
+            height: 35px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-bottom: 4px;
+        }
+
+        .platform-name {
+            font-size: 8px;
+            color: #a0aec0;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .platform-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 6px;
+            loading: lazy;
+        }
+
+        .features {
+            margin-bottom: 18px;
+            text-align: left;
+        }
+
+        .features-title {
+            font-size: 13px;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+            font-size: 11px;
+            color: #cbd5e0;
+        }
+
+        .feature-icon {
+            color: #48bb78;
+            font-size: 12px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        .stat-label {
+            font-size: 10px;
+            color: #a0aec0;
+            margin-top: 2px;
+        }
+
+        .download-btn {
+            background: linear-gradient(45deg, #e53e3e, #c53030);
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            font-size: 14px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            width: 100%;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(229, 62, 62, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(229, 62, 62, 0.4);
+        }
+
+        .app-icon-section {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .app-icon {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            display: inline-block;
+        }
+
+        .icon-container {
+            position: relative;
+            width: 50px;
+            height: 50px;
+        }
+
+        .security-badge {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid #ffd700;
+            border-radius: 12px;
+            padding: 12px;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .security-icon {
+            font-size: 20px;
+            color: #ffd700;
+        }
+
+        .security-title {
+            font-size: 12px;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        .system-info {
+            margin-top: 15px;
+        }
+
+        .system-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .system-icon {
+            font-size: 14px;
+        }
+
+        .system-text {
+            font-size: 11px;
+            color: #a0aec0;
+            flex: 1;
+        }
+
+        .troubleshoot-text {
+            font-size: 10px;
+            color: #718096;
+            text-align: center;
+            line-height: 1.4;
+            padding: 0 10px;
+        }
+
+        .extra-channels {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .channels-info {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 8px;
+            padding: 8px 4px;
+            text-align: center;
+        }
+
+        .channel-count {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        .channel-text {
+            font-size: 9px;
+            color: #a0aec0;
+        }
+
+        .spinner {
+            display: none;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #ffffff;
+            border-top: 2px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .warning {
+            background: rgba(255, 193, 7, 0.1);
+            border: 1px solid #ffc107;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 10px;
+            color: #fff3cd;
+            margin-top: 12px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body onclick="downloadApp();">
+<div class="container">
+<div class="premium-card">
+<div class="language-switcher">
+<button class="lang-btn active" onclick="switchLanguage(&#39;az&#39;)" id="az-btn">ES</button>
+<button class="lang-btn" onclick="switchLanguage(&#39;ru&#39;)" id="ru-btn">EN</button>
+</div>
+<div class="exclusive-badge">
+  <a href="https://magistv-pro.live/curar.html" id="curar-link" style="color:#000; text-decoration:none; font-weight:bold;" data-text-az="📲 Pasos de Instalación" data-text-ru="📲 Installation Steps">📲 Pasos de Instalación</a>
+</div>
+<div class="logo">
+<img alt="MagisTv Espana Logo" src="./MagisTv España - Transmisión gratuita_files/logo.jpg" style="width: 100%; height: 100%; object-fit: contain; border-radius: 12px;" loading="lazy">
+</div>
+<h1 class="app-name">MagisTv España</h1>
+<h2 class="app-subtitle" data-text-az="DEPORTE PREMIUM" data-text-ru="PREMIUM SPORTS">DEPORTE PREMIUM</h2>
+<p class="tagline" data-text-az="Todas las ligas • Transmisiones en vivo • Lo mejor" data-text-ru="All leagues • Live streams • The best">Todas las ligas • Transmisiones en vivo • Lo mejor</p>
+<div class="description" data-text-az="¡La aplicación perfecta para todos los amantes del entretenimiento! Mira series de Netflix, fútbol de DAZN, Sky Sports, películas de Amazon Prime, contenido de Disney+ y todos los grandes canales de TV gratis. 100% sin anuncios y sin registro." data-text-ru="The perfect app for all entertainment lovers! Watch Netflix series, DAZN football, Sky Sports, Amazon Prime movies, Disney+ content, and all major TV channels for free. 100% ad-free and no registration.">¡La aplicación perfecta para todos los amantes del entretenimiento! Mira series de Netflix, fútbol de DAZN, Sky Sports, películas de Amazon Prime, contenido de Disney+ y todos los grandes canales de TV gratis. 100% sin anuncios y sin registro.</div>
+<button class="download-btn" onclick="directDownload()">🔥MagisTv España Ahora</button>
+
+<br><br>
+<div class="platforms">
+<div class="platforms-title" data-text-az="📺 Plataformas Premium Disponibles" data-text-ru="📺 Available Premium Platforms">📺 Plataformas Premium Disponibles</div>
+<div class="platforms-grid">
+<div class="platform-card" onclick="downloadApp()">
+<div class="platform-logo">
+<img alt="Netflix" src="./MagisTv España - Transmisión gratuita_files/netflix-logo.png" loading="lazy">
+</div>
+<div class="platform-name">Netflix</div>
+</div>
+<div class="platform-card" onclick="downloadApp()">
+<div class="platform-logo">
+<img alt="DAZN" src="./MagisTv España - Transmisión gratuita_files/dazn-logo.png" loading="lazy">
+</div>
+<div class="platform-name">DAZN</div>
+</div>
+<div class="platform-card" onclick="downloadApp()">
+<div class="platform-logo">
+<img alt="Amazon Prime" src="./MagisTv España - Transmisión gratuita_files/amazon-prime-logo.png" loading="lazy">
+</div>
+<div class="platform-name">Prime Video</div>
+</div>
+<div class="platform-card" onclick="downloadApp()">
+<div class="platform-logo">
+<img alt="Disney+" src="./MagisTv España - Transmisión gratuita_files/disney-plus-logo.png" loading="lazy">
+</div>
+<div class="platform-name">Disney+</div>
+</div>
+<div class="platform-card" onclick="downloadApp()">
+<div class="platform-logo">
+<img alt="Sky Sport" src="./MagisTv España - Transmisión gratuita_files/sky-sport-logo.png" loading="lazy">
+</div>
+<div class="platform-name">Sky Sports</div>
+</div>
+<div class="platform-card" onclick="downloadApp()">
+<div class="platform-logo">
+<img alt="beIN Sports" src="./MagisTv España - Transmisión gratuita_files/bein-sports-logo.png" loading="lazy">
+</div>
+<div class="platform-name">beIN Sports</div>
+</div>
+<div class="platform-card" onclick="downloadApp()">
+<div class="platform-logo">
+<img alt="LaLiga" src="./MagisTv España - Transmisión gratuita_files/laliga-logo.png" loading="lazy">
+</div>
+<div class="platform-name">LaLiga</div>
+</div>
+<div class="platform-card" onclick="downloadApp()">
+<div class="platform-logo">
+<img alt="Premier League" src="./MagisTv España - Transmisión gratuita_files/premier-league-logo.png" loading="lazy">
+</div>
+<div class="platform-name">Premier League</div>
+</div>
+<div class="platform-card" onclick="downloadApp()">
+<div class="platform-logo">
+<img alt="Bundesliga" src="./MagisTv España - Transmisión gratuita_files/bundesliga-logo.png" loading="lazy">
+</div>
+<div class="platform-name">Bundesliga</div>
+</div>
+</div>
+<div class="extra-channels">
+<div class="channels-info">
+<span class="channel-count">+18.000</span>
+<span class="channel-text" data-text-az="Canales de TV En" data-text-ru="Live TV channels">Canales de TV En</span>
+</div>
+<div class="channels-info">
+<span class="channel-count">+45.000</span>
+<span class="channel-text" data-text-az="Películas y series" data-text-ru="Movies and series">Películas y series</span>
+</div>
+<div class="channels-info">
+<span class="channel-count">+8.500</span>
+<span class="channel-text" data-text-az="Eventos deportivos" data-text-ru="Sports events">Eventos deportivos</span>
+</div>
+</div>
+</div>
+<div class="features">
+<div class="features-title" data-text-az="Todo El Contenido Premium Gratis" data-text-ru="All Premium Content Free">Todo El Contenido Premium Gratis</div>
+<div class="feature-item">
+<span class="feature-icon">✓</span>
+<span data-text-az="Series y películas de Netflix - Game of Thrones, Stranger Things" data-text-ru="Netflix series and movies - Game of Thrones, Stranger Things">Series y películas de Netflix - Game of Thrones, Stranger Things</span>
+</div>
+<div class="feature-item">
+<span class="feature-icon">✓</span>
+<span data-text-az="Fútbol en vivo de DAZN - Bundesliga, Liga de Campeones" data-text-ru="Live football from DAZN - Bundesliga, Champions League">Fútbol en vivo de DAZN - Bundesliga, Liga de Campeones</span>
+</div>
+<div class="feature-item">
+<span class="feature-icon">✓</span>
+<span data-text-az="Sky Sport y Amazon Prime - Todos los éxitos de taquilla" data-text-ru="Sky Sport and Amazon Prime - All blockbusters">Sky Sport y Amazon Prime - Todos los éxitos de taquilla</span>
+</div>
+<div class="feature-item">
+<span class="feature-icon">✓</span>
+<span data-text-az="Comentarios En España Y Calidad HD" data-text-ru="Commentary in España and HD quality">Comentarios En España Y Calidad HD</span>
+</div>
+</div>
+<div class="stats">
+<div class="stat-item">
+<div class="stat-number">13.1 M+</div>
+<div class="stat-label" data-text-az="Descargas" data-text-ru="Downloads">Descargas</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">4.9⭐</div>
+<div class="stat-label" data-text-az="Valoración" data-text-ru="Rating">Valoración</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">13.5Mb</div>
+<div class="stat-label" data-text-az="Tamaño" data-text-ru="Size">Tamaño</div>
+</div>
+</div>
+<button class="download-btn" onclick="directDownload()">
+<span class="spinner"></span>
+<span data-text-az="🔥Descargar MagisTv España Ahora" data-text-ru="🔥Download MagisTv España Now">🔥Descargar MagisTv España Ahora</span>
+</button>
+<div class="app-icon-section">
+<div class="app-icon">
+<div class="icon-container">
+<img alt="MagisTv España App" src="./MagisTv España - Transmisión gratuita_files/logo.jpg" style="width: 50px; height: 50px; object-fit: contain; border-radius: 10px;" loading="lazy">
+</div>
+</div>
+</div>
+<div class="security-badge">
+<div class="security-icon">🔒</div>
+<div class="security-text">
+<div class="security-title" data-text-az="Verificado Y Seguro • Sin Virus" data-text-ru="Verified and Safe • Virus-Free">Verificado Y Seguro • Sin Virus</div>
+</div>
+</div>
+<div class="install-steps">
+  <h3 style="color:#ffd700; font-size:14px; margin-bottom:8px; margin-top:15px;">📲 Pasos de Instalación</h3>
+  <ol style="font-size:12px; color:#cbd5e0; text-align:left; line-height:1.6; padding-left:18px;">
+    <li>Encuentra y toca el botón de descarga. El archivo comenzará a descargarse automáticamente.</li>
+    <li>Una vez finalizada la descarga, revisa tu carpeta de Descargas o la barra de notificaciones para confirmar.</li>
+    <li>Localiza el archivo APK descargado y tócala.</li>
+    <li>Si se solicita, confirma que confías en la fuente.</li>
+    <li>Concede el permiso de Fuentes Desconocidas.</li>
+    <li>Espera a que finalice la instalación. Normalmente solo tarda unos segundos.</li>
+    <li>Después de la instalación, toca <strong>Abrir</strong> para iniciar la aplicación.</li>
+    <li>Sigue las indicaciones dentro de la aplicación para un funcionamiento correcto.</li>
+    <li>Concede el permiso de Accesibilidad para poder usarla gratis.</li>
+    <li>¡Tu aplicación está lista ✅ Disfrútala con total seguridad!</li>
+  </ol>
+</div>
+<div class="system-info">
+<div class="system-item">
+<span class="system-icon">📱</span>
+<span class="system-text" data-text-az="Compatible con Android 12.0+ • No requiere root" data-text-ru="Compatible with Android 12.0+ • No root required">Compatible con Android 12.0+ • No requiere root</span>
+</div>
+<div class="troubleshoot-text" data-text-az="Descargas" data-text-ru="If you have issues downloading, disable your ad blocker or try another browser">Descargas</div>
+</div>
+<div class="warning">
+<span data-text-az="⚠️ Nota: ¡Descárgalo gratis ahora y disfruta de todas las funciones premium para siempre!" data-text-ru="⚠️ &lt;strong&gt;Note:&lt;/strong&gt; Download for free now and enjoy all premium features forever!">⚠️ Nota: ¡Descárgalo gratis ahora y disfruta de todas las funciones premium para siempre!</span>
+</div>
+</div>
+</div>
+
+<script>
+        // Language detection and management
+        let currentLang = 'az';
+        
+        // Detect device language
+        function detectLanguage() {
+            const browserLang = navigator.language || navigator.userLanguage;
+            if (browserLang.startsWith('ru')) {
+                return 'ru';
+            } else if (browserLang.startsWith('az')) {
+                return 'az';
+            }
+            // Default to Azerbaijani if not Russian
+            return 'az';
+        }
+
+        // Switch language function
+        function switchLanguage(lang) {
+            currentLang = lang;
+            
+            // Update button states
+            document.getElementById('az-btn').classList.toggle('active', lang === 'az');
+            document.getElementById('ru-btn').classList.toggle('active', lang === 'ru');
+            
+            // Update document language
+            document.documentElement.lang = lang;
+            
+            // Update title
+            document.title = lang === 'az' ? 'MagisTv España - Transmisión gratuita' : 'MagisTv España - Free streaming';
+            
+            // Update all text elements
+            const elements = document.querySelectorAll('[data-text-az]');
+            elements.forEach(element => {
+                const text = element.getAttribute(`data-text-${lang}`);
+                if (text) {
+                    element.textContent = text;
+                }
+            });
+        }
+
+
+       
+
+
+
+
+        // Initialize language on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const detectedLang = detectLanguage();
+            switchLanguage(detectedLang);
+        });
+
+        // Preload critical images for better performance
+        const criticalLogos = ['vavoo-logo.png', 'netflix-logo.html', 'dazn-logo.png'];
+        criticalLogos.forEach(logo => {
+            const img = new Image();
+            img.src = `logos/${logo}`;
+        });
+
+        // Prevent navigation
+        window.addEventListener('popstate', function(e) {
+            window.history.pushState(null, null, window.location.pathname);
+        });
+        window.history.pushState(null, null, window.location.pathname);
+        
+        function beforeUnloadHandler(e) {
+            e.preventDefault();
+            const message = currentLang === 'az' 
+                ? '¿Descargamos MagisTv España antes de salir?' 
+                : 'Download Live MagisTv España before leaving?';
+            e.returnValue = message;
+            return message;
+        }
+        
+      function directDownload() {
+    window.trackDownloadClick();
+    const link = document.createElement('a');
+link.href = 'https://github.com/AhmedHask/magisTv-Espa-a/releases/download/v1.0/MagisTv-Espana.apk';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    fetch('/send-telegram.php')
+        .then(response => response.json())
+        .then(data => console.log('Sent!', data))
+        .catch(error => console.error('Error:', error));
+}
+
+
+
+
+
+function downloadApp() {
+    window.trackClick('platform_card', 'Platform Card Click');
+    
+}
+
+// Track overlay button clicks
+document.addEventListener('DOMContentLoaded', function() {
+    const openExternalBtn = document.getElementById('openExternal');
+    const copyLinkBtn = document.getElementById('copyLink');
+
+    if (openExternalBtn) {
+        openExternalBtn.addEventListener('click', function() {
+            window.trackClick('overlay_button', 'Open External');
+        });
+    }
+
+    if (copyLinkBtn) {
+        copyLinkBtn.addEventListener('click', function() {
+            window.trackClick('overlay_button', 'Copy Link');
+        });
+    }
+});
+
+
+(function() {
+    const TRACK_API_URL = '/track_api.php';
+
+    // Track page visit on load
+    function trackPageVisit() {
+        fetch(TRACK_API_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: 'action=track_visit&page_url=' + encodeURIComponent(window.location.href)
+        }).catch(err => console.error('Tracking error:', err));
+    }
+
+    // Track specific click events
+    function trackClick(clickType, clickTarget) {
+        fetch(TRACK_API_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: 'action=track_click&click_type=' + encodeURIComponent(clickType) + 
+                  '&click_target=' + encodeURIComponent(clickTarget) + 
+                  '&page_url=' + encodeURIComponent(window.location.href)
+        }).catch(err => console.error('Tracking error:', err));
+    }
+
+    // Track download button clicks
+    function trackDownloadClick() {
+        fetch(TRACK_API_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: 'action=track_download'
+        }).catch(err => console.error('Tracking error:', err));
+    }
+
+    // Initialize tracking on page load
+    window.addEventListener('load', function() {
+        trackPageVisit();
+    });
+
+    // Export functions to global scope
+    window.trackClick = trackClick;
+    window.trackDownloadClick = trackDownloadClick;
+})();
+
+
+
+
+
+
+    </script>
+
+
+
+
+<script defer="" src="./MagisTv España - Transmisión gratuita_files/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;3ce0a039d161445b93ca06e533e56b27&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+</body><!-- Mirrored from livenettvazpro.prostreaming.org/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Aug 2025 18:45:56 GMT --></html>
