@@ -1,5 +1,2 @@
 User-agent: *
-Allow: /
-
-# (Opcional) si luego tienes sitemap:
-# Sitemap: https://ahmedhask.github.io/MagisTv-Pro/sitemap.xml
+Disallow: /
